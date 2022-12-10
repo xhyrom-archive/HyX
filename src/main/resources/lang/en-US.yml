@@ -19,5 +19,20 @@ commands:
       survival: "Survival"
       adventure: "Adventure"
       spectator: "Spectator"
+  vanish:
+    enable:
+      message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You are now <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
+    disable:
+      message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You are no longer <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
+  fly:
+    enable:
+      message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Fly has been <gradient:#2fa4c4:#2fbfc4:#2fc4a9>enabled</gradient>"
+    disable:
+        message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Fly has been <gradient:#2fa4c4:#2fbfc4:#2fc4a9>disabled</gradient>"
 
+bossbar:
+  vanished:
+    message: "<gray>You are <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
+
+# Please, don't modify this version. It's used for internal purposes.
 config-version: 1

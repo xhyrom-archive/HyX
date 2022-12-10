@@ -7,22 +7,19 @@ import me.xhyrom.hyx.HyX;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bukkit.entity.Player;
 
-@Command("vanish")
-@Permission("hyx.command.vanish")
-public class VanishCommand {
+@Command("fly")
+@Permission("hyx.command.fly")
+public class Fly {
     @Default
-    public static void onDefault(
+    public static void fly(
             Player player
     ) {
-        HyX.Companion.getInstanceUnsafe().modules().getVanish().setVanished(
-                player,
-                !HyX.Companion.getInstanceUnsafe().modules().getVanish().isVanished(player)
-        );
+        player.setAllowFlight(!player.getAllowFlight());
 
         player.sendMessage(MiniMessage.miniMessage().deserialize(
                 HyX.Companion.getInstanceUnsafe().lang().getString(
-                        "commands.vanish." +
-                                (HyX.Companion.getInstanceUnsafe().modules().getVanish().isVanished(player)
+                        "commands.fly." +
+                                (player.getAllowFlight()
                                         ? "enable.message"
                                         : "disable.message"
                                 )

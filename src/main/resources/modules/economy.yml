@@ -1,0 +1,5 @@
+# Enable economy - VAULT REQUIRED
+enabled: true
+
+# Please, don't modify this version. It's used for internal purposes.
+config-version: 1

@@ -12,7 +12,10 @@ import me.xhyrom.hylib.libs.commandapi.executors.CommandExecutor
 import me.xhyrom.hyx.commands.gamemodes.*
 import me.xhyrom.hyx.commands.virtual.*
 import me.xhyrom.hyx.commands.*
+import me.xhyrom.hyx.hooks.Hooks
 import me.xhyrom.hyx.listeners.PlayerListener
+import me.xhyrom.hyx.modules.Modules
+import me.xhyrom.hyx.modules.impl.Vanish
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.minimessage.MiniMessage
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder
@@ -25,7 +28,11 @@ class HyX : JavaPlugin() {
     companion object {
         private var instance: HyX? = null
 
-        fun getInstance(): HyX {
+        fun getInstance(): HyX? {
+            return instance
+        }
+
+        fun getInstanceUnsafe(): HyX {
             return instance!!
         }
     }
@@ -33,6 +40,8 @@ class HyX : JavaPlugin() {
     private var xConfig: Config? = null
     private var commandsConfig: Config? = null
     private var language: Language? = null
+    private var hooks: Hooks? = null
+    private var modules: Modules? = null
 
     override fun onEnable() {
         instance = this
@@ -42,6 +51,12 @@ class HyX : JavaPlugin() {
         language = HyLibProvider.get().getLanguageManager().register(this.dataFolder.path) { path ->
             this.getResource(path)!!
         }
+
+        // Init hooks - softdepends
+        hooks = Hooks()
+
+        modules = Modules()
+        modules!!.init()
 
         server.pluginManager.registerEvents(PlayerListener(), this)
 
@@ -59,11 +74,12 @@ class HyX : JavaPlugin() {
         registerCommand(mode, "enderchest", EnderChest::class)
 
         registerCommand(mode, "vanish", VanishCommand::class)
+        registerCommand(mode, "fly", Fly::class)
 
         createCommand()
     }
 
-    private fun registerCommand(mode: String, commandName: String, commandClass: KClass<out Any>) {
+    fun registerCommand(mode: String, commandName: String, commandClass: KClass<out Any>) {
         if (
             (
                     mode == "whitelist" &&
@@ -103,6 +119,28 @@ class HyX : JavaPlugin() {
                                                 )
 
                                                 return@CommandExecutor
+                                            }
+
+                                            modules().modules.forEach { (name, module) ->
+                                                if (!module.config.reload()) {
+                                                    sender.sendMessage(
+                                                        MiniMessage.miniMessage().deserialize(
+                                                            lang().getString("commands.x.reload.fail").get(),
+                                                            Placeholder.component("type", Component.text("Module $name"))
+                                                        )
+                                                    )
+
+                                                    return@CommandExecutor
+                                                }
+
+                                                module.onConfigReload()
+
+                                                sender.sendMessage(
+                                                    MiniMessage.miniMessage().deserialize(
+                                                        lang().getString("commands.x.reload.success").get(),
+                                                        Placeholder.component("type", Component.text(name))
+                                                    )
+                                                )
                                             }
 
                                             sender.sendMessage(
@@ -149,5 +187,13 @@ class HyX : JavaPlugin() {
 
     fun commandsConfig(): Config {
         return commandsConfig!!
+    }
+
+    fun hooks(): Hooks {
+        return hooks!!
+    }
+
+    fun modules(): Modules {
+        return modules!!
     }
 }

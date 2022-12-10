@@ -24,6 +24,7 @@ repositories {
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
     compileOnly("me.xhyrom.hylib:hylib-bukkit:1.1.0")
+    compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
     compileOnly("dev.jorel:commandapi-annotations:8.5.1")
     annotationProcessor("dev.jorel:commandapi-annotations:8.5.1")

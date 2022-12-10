@@ -5,5 +5,8 @@ main: me.xhyrom.hyx.HyX
 author: xHyroM#2815
 api-version: 1.19
 
+softdepend:
+  - Vault
+
 depend:
   - hylib-bukkit

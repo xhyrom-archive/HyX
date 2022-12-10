@@ -1,0 +1,13 @@
+bossbar:
+  # Available colors: pink, blue, red, green, yellow, purple, white
+  color: "red"
+  # Available overlays: progress, notched_6, notched_10, notched_12, notched_20
+  overlay: "progress"
+
+vanished-features:
+  disable-damage: true
+  disable-entity-target: true
+  disable-hunger: true
+
+# Please, don't modify this version. It's used for internal purposes.
+config-version: 1
