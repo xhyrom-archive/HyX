@@ -1,0 +1,23 @@
+# There is also PlaceholderAPI support with <papi:NAME OF PLACEHOLDER> for example <papi:luckperms_prefix>
+# There is some custom placeholders - you will see them in other comments
+
+commands:
+  x:
+    reload:
+      # Main placeholders: <type>
+      success: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><type> configuration has been reloaded!"
+      fail: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>Hyx</gradient> <dark_gray>| <gray><type> configuration <red>failed to reload<gray>, check console for more informations!"
+  gamemode:
+    success:
+      # Main placeholders: <type>
+      message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Your gamemode has been changed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><type></gradient>"
+    fail:
+      # Main placeholders: <type>
+      message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You don't have permission to change your gamemode to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><type></gradient>"
+    types:
+      creative: "Creative"
+      survival: "Survival"
+      adventure: "Adventure"
+      spectator: "Spectator"
+
+config-version: 1

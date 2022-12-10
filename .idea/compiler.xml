@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-annotations/8.5.1/298a80ff428b5d813b4fefc7bd2a49c063c6486e/commandapi-annotations-8.5.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-core/8.5.1/1b9cd4d8f15a438e3b347e3d936bd5b279cd6c89/commandapi-core-8.5.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-preprocessor/8.5.1/f80362351fc1dd5e33e029d6aaad30eb598269f1/commandapi-preprocessor-8.5.1.jar" />
+        </processorPath>
+        <module name="HyX.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="17" />
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="HyX.main" options="--add-modules java.base" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,7 @@
+# Blacklist - add all commands you want to block here
+# Whitelist - add all commands you want to allow here
+mode: blacklist
+commands: []
+
+# Please, don't modify this version. It's used for internal purposes.
+config-version: 1
