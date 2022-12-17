@@ -7,6 +7,10 @@ commands:
       # Main placeholders: <type>
       success: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><type> configuration has been reloaded!"
       fail: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>Hyx</gradient> <dark_gray>| <gray><type> configuration <red>failed to reload<gray>, check console for more informations!"
+    players:
+      whitelist:
+        add-all-online: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Added all online players to whitelist!"
+        remove-all: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Removed all players from whitelist!"
   gamemode:
     success:
       # Main placeholders: <type>
@@ -35,4 +39,4 @@ bossbar:
     message: "<gray>You are <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
 
 # Please, don't modify this version. It's used for internal purposes.
-config-version: 1
+config-version: 2

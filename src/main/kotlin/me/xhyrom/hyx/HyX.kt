@@ -94,6 +94,54 @@ class HyX : JavaPlugin() {
             (HyLibProvider.get().getCommandManager().create("x") as BukkitCommand)
                 .withFullDescription("hyx plugin management")
                 .withSubcommand(
+                    BukkitCommand("players")
+                        .withFullDescription("Do some things with players")
+                        .withPermission("hyx.command.players")
+                        .withSubcommand(
+                            BukkitCommand("whitelist")
+                                .withFullDescription("Manage player whitelist")
+                                .withPermission("hyx.command.players.whitelist")
+                                .withArguments(
+                                    StringArgument("type").includeSuggestions(
+                                        ArgumentSuggestions.strings(
+                                            "addAllOnline",
+                                            "removeAll",
+                                        )
+                                    )
+                                )
+                                .executes(
+                                    CommandExecutor { sender: CommandSender, args: Array<Any?> ->
+                                        run {
+                                            when (args[0]) {
+                                                "addAllOnline" -> {
+                                                    server.onlinePlayers.forEach { player ->
+                                                        player.isWhitelisted = true
+                                                    }
+
+                                                    sender.sendMessage(
+                                                        MiniMessage.miniMessage().deserialize(
+                                                            lang().getString("commands.x.players.whitelist.add-all-online").get(),
+                                                        )
+                                                    )
+                                                }
+                                                "removeAll" -> {
+                                                    server.whitelistedPlayers.forEach { player ->
+                                                        player.isWhitelisted = false
+                                                    }
+
+                                                    sender.sendMessage(
+                                                        MiniMessage.miniMessage().deserialize(
+                                                            lang().getString("commands.x.players.whitelist.remove-all").get(),
+                                                        )
+                                                    )
+                                                }
+                                            }
+                                        }
+                                    }
+                                )
+                        )
+                )
+                .withSubcommand(
                     BukkitCommand("reload")
                         .withFullDescription("reload config")
                         .withPermission("hyx.command.reload")
