@@ -9,5 +9,12 @@ vanished-features:
   disable-entity-target: true
   disable-hunger: true
 
+send-admin-notifications: true
+
+# Configurable in lang file
+send-fake-messages:
+  join: true
+  leave: true
+
 # Please, don't modify this version. It's used for internal purposes.
-config-version: 1
+config-version: 2

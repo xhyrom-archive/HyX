@@ -15,6 +15,8 @@ commands:
     success:
       # Main placeholders: <type>
       message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Your gamemode has been changed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><type></gradient>"
+      # Main placeholders: <type> <player> <player_displayname>
+      other-message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><player>'s gamemode has been changed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><type></gradient>"
     fail:
       # Main placeholders: <type>
       message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You don't have permission to change your gamemode to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><type></gradient>"
@@ -38,5 +40,16 @@ bossbar:
   vanished:
     message: "<gray>You are <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
 
+modules:
+  vanish:
+    fake-messages:
+      # Main placeholders: <player> <player_displayname>
+      join: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><player> <green>joined<gray> the game!"
+      leave: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><player> <red>left<gray> the game!"
+    notification:
+      # Main placeholders: <player> <player_displayname>
+      enable: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><player> is <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
+      disable: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><player> is no longer <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
+
 # Please, don't modify this version. It's used for internal purposes.
-config-version: 2
+config-version: 3
