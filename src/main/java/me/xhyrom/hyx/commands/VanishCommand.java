@@ -1,5 +1,6 @@
 package me.xhyrom.hyx.commands;
 
+import dev.jorel.commandapi.annotations.Alias;
 import dev.jorel.commandapi.annotations.Command;
 import dev.jorel.commandapi.annotations.Default;
 import dev.jorel.commandapi.annotations.Permission;
@@ -10,6 +11,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 @Command("vanish")
+@Alias({"v"})
 @Permission("hyx.command.vanish")
 public class VanishCommand {
     @Default
