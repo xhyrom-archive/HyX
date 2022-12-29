@@ -15,7 +15,6 @@ import me.xhyrom.hyx.commands.*
 import me.xhyrom.hyx.hooks.Hooks
 import me.xhyrom.hyx.listeners.PlayerListener
 import me.xhyrom.hyx.modules.Modules
-import me.xhyrom.hyx.modules.impl.Vanish
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.minimessage.MiniMessage
 import net.kyori.adventure.text.minimessage.tag.resolver.Placeholder
@@ -72,6 +71,7 @@ class HyX : JavaPlugin() {
         registerCommand(mode, "anvil", Anvil::class)
         registerCommand(mode, "workbench", Workbench::class)
         registerCommand(mode, "enderchest", EnderChest::class)
+        registerCommand(mode, "invsee", Invsee::class)
 
         registerCommand(mode, "vanish", VanishCommand::class)
         registerCommand(mode, "fly", Fly::class)
