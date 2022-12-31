@@ -12,6 +12,9 @@ import me.xhyrom.hylib.libs.commandapi.executors.CommandExecutor
 import me.xhyrom.hyx.commands.gamemodes.*
 import me.xhyrom.hyx.commands.virtual.*
 import me.xhyrom.hyx.commands.*
+import me.xhyrom.hyx.commands.speed.Flyspeed
+import me.xhyrom.hyx.commands.speed.Speed
+import me.xhyrom.hyx.commands.speed.Walkspeed
 import me.xhyrom.hyx.hooks.Hooks
 import me.xhyrom.hyx.listeners.PlayerListener
 import me.xhyrom.hyx.modules.Modules
@@ -72,6 +75,11 @@ class HyX : JavaPlugin() {
         registerCommand(mode, "workbench", Workbench::class)
         registerCommand(mode, "enderchest", EnderChest::class)
         registerCommand(mode, "invsee", Invsee::class)
+
+        // Speed commands
+        registerCommand(mode, "speed", Speed::class)
+        registerCommand(mode, "flyspeed", Flyspeed::class)
+        registerCommand(mode, "walkspeed", Walkspeed::class)
 
         registerCommand(mode, "vanish", VanishCommand::class)
         registerCommand(mode, "fly", Fly::class)

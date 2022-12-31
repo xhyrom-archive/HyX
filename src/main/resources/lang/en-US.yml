@@ -35,6 +35,21 @@ commands:
       message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Fly has been <gradient:#2fa4c4:#2fbfc4:#2fc4a9>enabled</gradient>"
     disable:
         message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Fly has been <gradient:#2fa4c4:#2fbfc4:#2fc4a9>disabled</gradient>"
+  speed:
+    walk:
+      success:
+        # Main placeholders: <speed>
+        message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Your walk speed has been changed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><speed></gradient>"
+      fail:
+        # Main placeholders: <speed>
+        message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You don't have permission to change your walk speed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><speed></gradient>"
+    fly:
+      success:
+        # Main placeholders: <speed>
+        message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Your fly speed has been changed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><speed></gradient>"
+      fail:
+        # Main placeholders: <speed>
+        message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You don't have permission to change your fly speed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><speed></gradient>"
 
 bossbar:
   vanished:
