@@ -1,13 +1,14 @@
 plugins {
     id("java-library")
     id("java")
+    id("maven-publish")
     id("com.github.johnrengelman.shadow") version "7.1.2"
     kotlin("jvm") version "1.6.21"
     application
 }
 
 group = "me.xhyrom.hyx"
-version = "1.0.0"
+version = "1.0.1"
 description = "A powerful and lightweight plugin"
 
 repositories {
@@ -23,11 +24,11 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
-    compileOnly("me.xhyrom.hylib:hylib-bukkit:1.1.0")
+    compileOnly("me.xhyrom.hylib:hylib-bukkit:1.2.1")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
-    compileOnly("dev.jorel:commandapi-annotations:8.5.1")
-    annotationProcessor("dev.jorel:commandapi-annotations:8.5.1")
+    compileOnly("dev.jorel:commandapi-annotations:8.8.0")
+    annotationProcessor("dev.jorel:commandapi-annotations:8.8.0")
 }
 
 tasks.processResources {
@@ -60,5 +61,28 @@ java {
 }
 
 application {
-    mainClass.set("me.xhyrom.hychat.HyChat")
+    mainClass.set("me.xhyrom.hyx.HyX")
+}
+
+publishing {
+    publications.create<MavenPublication>("maven") {
+        artifact(tasks["shadowJar"])
+
+        repositories.maven {
+            url = uri("https://repo.jopga.me/releases")
+
+            credentials(PasswordCredentials::class)
+            authentication {
+                create<BasicAuthentication>("basic")
+            }
+        }
+
+        groupId = rootProject.group as String
+        artifactId = project.name
+        version = rootProject.version as String
+
+        pom {
+            name.set("HyX")
+        }
+    }
 }

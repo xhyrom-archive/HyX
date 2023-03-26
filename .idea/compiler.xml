@@ -5,9 +5,9 @@
       <profile name="Gradle Imported" enabled="true">
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-annotations/8.5.1/298a80ff428b5d813b4fefc7bd2a49c063c6486e/commandapi-annotations-8.5.1.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-core/8.5.1/1b9cd4d8f15a438e3b347e3d936bd5b279cd6c89/commandapi-core-8.5.1.jar" />
-          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-preprocessor/8.5.1/f80362351fc1dd5e33e029d6aaad30eb598269f1/commandapi-preprocessor-8.5.1.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-annotations/8.8.0/feadc4b6b781beda2fb6f6f2f88ef9ffe9a3fd6c/commandapi-annotations-8.8.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-core/8.8.0/45c52add64fef2dffeb9d3dd53b3b3b176501724/commandapi-core-8.8.0.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-preprocessor/8.8.0/8a9d362125942ad3ec9d372b260d52af03db89e8/commandapi-preprocessor-8.8.0.jar" />
         </processorPath>
         <module name="HyX.main" />
       </profile>
