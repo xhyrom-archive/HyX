@@ -11,10 +11,8 @@ import me.xhyrom.hylib.libs.commandapi.arguments.StringArgument
 import me.xhyrom.hylib.libs.commandapi.executors.CommandExecutor
 import me.xhyrom.hyx.commands.gamemodes.*
 import me.xhyrom.hyx.commands.virtual.*
+import me.xhyrom.hyx.commands.speed.*
 import me.xhyrom.hyx.commands.*
-import me.xhyrom.hyx.commands.speed.Flyspeed
-import me.xhyrom.hyx.commands.speed.Speed
-import me.xhyrom.hyx.commands.speed.Walkspeed
 import me.xhyrom.hyx.hooks.Hooks
 import me.xhyrom.hyx.listeners.PlayerListener
 import me.xhyrom.hyx.modules.Modules
@@ -84,17 +82,33 @@ class HyX : JavaPlugin() {
         registerCommand(mode, "vanish", VanishCommand::class)
         registerCommand(mode, "fly", Fly::class)
 
+        registerCommand(mode, "repair", Repair::class, true)
+
         createCommand()
     }
 
     fun registerCommand(mode: String, commandName: String, commandClass: KClass<out Any>) {
+        registerCommand(mode, commandName, commandClass, false)
+    }
+
+    fun registerCommand(mode: String, commandName: String, commandClass: KClass<out Any>, modern: Boolean) {
         if (
             (
                     mode == "whitelist" &&
                     commandsConfig().getStringList("commands").get().contains(commandName)
             ) ||
             !commandsConfig().getStringList("commands").get().contains(commandName)
-        ) CommandAPI.registerCommand(commandClass.java)
+        ) {
+            if (modern) {
+                // create instance of command class and register it
+                val command = commandClass.java.getDeclaredConstructor().newInstance() as me.xhyrom.hyx.structs.Command
+                command.register()
+
+                return
+            }
+
+            CommandAPI.registerCommand(commandClass.java)
+        }
     }
 
     private fun createCommand() {

@@ -3,5 +3,12 @@
 mode: blacklist
 commands: []
 
+cooldowns:
+  repair:
+    # default, no permission
+    default: 10000 # in milliseconds
+    # permission: hyx.command.repair.cooldown.vip
+    vip: 5000 # in milliseconds
+
 # Please, don't modify this version. It's used for internal purposes.
-config-version: 1
+config-version: 2

@@ -50,6 +50,11 @@ commands:
       fail:
         # Main placeholders: <speed>
         message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You don't have permission to change your fly speed to <gradient:#2fa4c4:#2fbfc4:#2fc4a9><speed></gradient>"
+  repair:
+    cooldown:
+      # Main placeholders: <time>
+      message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>You can't repair your item yet! Please wait <gradient:#2fa4c4:#2fbfc4:#2fc4a9><time></gradient>"
+    message: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray>Your item has been repaired!"
 
 bossbar:
   vanished:
@@ -67,4 +72,4 @@ modules:
       disable: "<gradient:#2fa4c4:#2fbfc4:#2fc4a9>HyX</gradient> <dark_gray>| <gray><player> is no longer <gradient:#2fa4c4:#2fbfc4:#2fc4a9>vanished</gradient>"
 
 # Please, don't modify this version. It's used for internal purposes.
-config-version: 3
+config-version: 4
