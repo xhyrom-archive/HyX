@@ -1,5 +1,6 @@
 package me.xhyrom.hyx.commands
 
+import me.xhyrom.hylib.libs.commandapi.executors.CommandArguments
 import me.xhyrom.hylib.libs.commandapi.executors.PlayerCommandExecutor
 import me.xhyrom.hyx.HyX.Companion.getInstanceUnsafe
 import me.xhyrom.hyx.structs.Command
@@ -16,7 +17,7 @@ class Repair : Command("repair") {
             })
     }
 
-    private fun onDefault(player: Player, args: Array<Any>) {
+    private fun onDefault(player: Player, args: CommandArguments) {
         val item = player.inventory.itemInMainHand
         val meta = item.itemMeta
         (meta as Damageable).damage = 0

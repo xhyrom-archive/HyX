@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "me.xhyrom.hyx"
-version = "1.1.0"
+version = "2.0.0"
 description = "A powerful and lightweight plugin"
 
 repositories {
@@ -24,11 +24,11 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
-    compileOnly("me.xhyrom.hylib:hylib-bukkit:1.2.3")
+    compileOnly("me.xhyrom.hylib:hylib-bukkit:2.0.0")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
-    compileOnly("dev.jorel:commandapi-annotations:8.8.0")
-    annotationProcessor("dev.jorel:commandapi-annotations:8.8.0")
+    compileOnly("dev.jorel:commandapi-annotations:9.0.1")
+    annotationProcessor("dev.jorel:commandapi-annotations:9.0.1")
 }
 
 tasks.processResources {

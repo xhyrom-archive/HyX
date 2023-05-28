@@ -8,6 +8,7 @@ import me.xhyrom.hylib.common.api.structs.Language
 import me.xhyrom.hylib.libs.commandapi.CommandAPI
 import me.xhyrom.hylib.libs.commandapi.arguments.ArgumentSuggestions
 import me.xhyrom.hylib.libs.commandapi.arguments.StringArgument
+import me.xhyrom.hylib.libs.commandapi.executors.CommandArguments
 import me.xhyrom.hylib.libs.commandapi.executors.CommandExecutor
 import me.xhyrom.hyx.commands.gamemodes.*
 import me.xhyrom.hyx.commands.virtual.*
@@ -132,9 +133,9 @@ class HyX : JavaPlugin() {
                                     )
                                 )
                                 .executes(
-                                    CommandExecutor { sender: CommandSender, args: Array<Any?> ->
+                                    CommandExecutor { sender: CommandSender, args: CommandArguments ->
                                         run {
-                                            when (args[0]) {
+                                            when (args.get("type") as String) {
                                                 "addAllOnline" -> {
                                                     server.onlinePlayers.forEach { player ->
                                                         player.isWhitelisted = true
@@ -176,9 +177,9 @@ class HyX : JavaPlugin() {
                             )
                         )
                         .executes(
-                            CommandExecutor { sender: CommandSender, args: Array<Any?> ->
+                            CommandExecutor { sender: CommandSender, args: CommandArguments ->
                                 run {
-                                    when (args[0] as String) {
+                                    when (args.get("type") as String) {
                                         "config" -> {
                                             if (!xConfig().reload()) {
                                                 sender.sendMessage(
