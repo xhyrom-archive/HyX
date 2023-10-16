@@ -6,13 +6,12 @@
         <autoDetectTypes>
           <platformType>PAPER</platformType>
           <platformType>ADVENTURE</platformType>
+          <platformType>BUKKIT</platformType>
         </autoDetectTypes>
       </configuration>
     </facet>
   </component>
-  <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main">
-      <sourceFolder url="file://$MODULE_DIR$/../../build/generated/sources/annotationProcessor/java/main" isTestSource="false" generated="true" />
-    </content>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="9a0366e4-d8af-4df5-bd5e-121fce304289" />
   </component>
 </module>

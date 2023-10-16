@@ -1,5 +1,6 @@
 package me.xhyrom.hyx.structs
 
+import me.xhyrom.hylib.libs.boostedyaml.YamlDocument
 import me.xhyrom.hylib.libs.commandapi.CommandAPICommand
 import me.xhyrom.hyx.HyX
 import me.xhyrom.hyx.middlewares.CooldownMiddleware
@@ -13,7 +14,9 @@ open class Command(val name: String) {
     private var cooldowns = mapOf<String, Int>()
 
     init {
-        (HyX.getInstanceUnsafe().commandsConfig().get("cooldowns.$name").get() as Map<*, *>).forEach {
+        val section = (HyX.getInstanceUnsafe().commandsConfig().getRaw() as YamlDocument).getSection("cooldowns.$name")
+
+        (section.getStringRouteMappedValues(false)).forEach {
             (key, value) -> cooldowns.plus(Pair(key as String, value as Int))
         }
     }
