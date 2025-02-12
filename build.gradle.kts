@@ -3,7 +3,7 @@ plugins {
     id("java")
     id("maven-publish")
     id("com.github.johnrengelman.shadow") version "7.1.2"
-    kotlin("jvm") version "1.6.21"
+    kotlin("jvm") version "2.1.20-Beta2"
     application
 }
 
@@ -24,7 +24,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.19.2-R0.1-SNAPSHOT")
-    compileOnly("me.xhyrom.hylib:hylib-bukkit:2.0.0")
+    compileOnly("me.xhyrom.hylib:hylib-bukkit:2.0.3")
     compileOnly("com.github.MilkBowl:VaultAPI:1.7")
 
     compileOnly("dev.jorel:commandapi-annotations:9.0.1")

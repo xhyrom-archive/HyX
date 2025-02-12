@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/HyX.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HyX.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/me.xhyrom.hyx.HyX.main.iml" filepath="$PROJECT_DIR$/.idea/modules/me.xhyrom.hyx.HyX.main.iml" />
     </modules>
   </component>
 </project>

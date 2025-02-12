@@ -9,7 +9,7 @@
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-bukkit-core/9.0.1/e815006ba51dd48fb29d54e9a142084ee286db6f/commandapi-bukkit-core-9.0.1.jar" />
           <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/dev.jorel/commandapi-core/9.0.1/de6bef62a6721fa4f9cafcc338bca2b125d07109/commandapi-core-9.0.1.jar" />
         </processorPath>
-        <module name="HyX.main" />
+        <module name="me.xhyrom.hyx.HyX.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="17" />

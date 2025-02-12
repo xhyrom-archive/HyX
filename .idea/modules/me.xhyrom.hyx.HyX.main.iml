@@ -8,14 +8,8 @@
           <platformType>ADVENTURE</platformType>
           <platformType>BUKKIT</platformType>
         </autoDetectTypes>
+        <projectReimportVersion>1</projectReimportVersion>
       </configuration>
     </facet>
-  </component>
-  <component name="NewModuleRootManager" inherit-compiler-output="true">
-    <exclude-output />
-    <orderEntry type="sourceFolder" forTests="false" />
-  </component>
-  <component name="SonarLintModuleSettings">
-    <option name="uniqueId" value="9a0366e4-d8af-4df5-bd5e-121fce304289" />
   </component>
 </module>
